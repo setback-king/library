@@ -70,6 +70,7 @@ formInput.addEventListener('submit', (e) =>{
     e.preventDefault();
 
     addBookToLibrary();
+  debugger
     createBook(myLibrary);
     resetForm();
     refreshBooks();
