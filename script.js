@@ -136,9 +136,6 @@ books.addEventListener('click', (e) => {
         createBook(myLibrary);
         let storedLibrary = JSON.stringify(myLibrary);
         localStorage.setItem('library', storedLibrary);
-
-        console.log(myLibrary)
-        console.log(e.target)
       }
       else if (e.target.classList.contains('greenButton')) {
           e.target.textContent = "Read: No";
@@ -146,9 +143,7 @@ books.addEventListener('click', (e) => {
           myLibrary[e.target.getAttribute('datatext')].read = "No"
           let storedLibrary = JSON.stringify(myLibrary);
           localStorage.setItem('library', storedLibrary);
-         
-    
-          console.log(e.target)
+   
       }
       else if (e.target.classList.contains('redButton')) {
           e.target.textContent = "Read: Yes";
@@ -158,7 +153,7 @@ books.addEventListener('click', (e) => {
           localStorage.setItem('library', storedLibrary);
 
           
-          console.log(e.target)
+       
       }
    
       else console.log(e.target)
