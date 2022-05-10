@@ -68,8 +68,9 @@ function createBook(array) {
 // event listener for click on submit button on form
 formInput.addEventListener('submit', (e) =>{
     e.preventDefault();
-
+     console.log(myLibrary)
     addBookToLibrary();
+    console.log(myLibrary)
     createBook(myLibrary);
     resetForm();
     refreshBooks();
@@ -215,4 +216,4 @@ function onStartUp(){
 
 onStartUp();
 
-console.log(myLibrary)
+
