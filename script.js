@@ -10,7 +10,7 @@ const btn = document.querySelector('#readInfo');
 
 // adds book to array 
 function addBookToLibrary() {
-  let newBook = new Book(title1.value, author1.value, pages1.value, checkedValue());
+  let newBook = new Book(title1.value, author1.value, pages1.value, checkedValue);
   myLibrary.push(newBook);
 
   let storedLibrary = JSON.stringify(myLibrary);
@@ -70,14 +70,14 @@ formInput.addEventListener('submit', (e) =>{
     e.preventDefault();
 
     addBookToLibrary();
+    createBook(myLibrary);
     resetForm();
     refreshBooks();
-    createBook(myLibrary);
+    
 
 })
 
-// array that book objects is pushed to
-let myLibrary = [];
+
  
 // constructor for book objects 
 function Book(title, author, pages, read) {
@@ -201,7 +201,7 @@ if (storageAvailable('localStorage')) {
 
 // checks to see on page load, if local storage exists from prior session, if it does, loads user data
 function onStartUp(){
-    if ((localStorage && localStorage === 0) || (localStorage.getItem('library') == '[]')) {
+    if ((localStorage && localStorage.length === 0) || (localStorage.getItem('library') == '[]')) {
         localStorage.removeItem('library');
         myLibrary = [];
         
