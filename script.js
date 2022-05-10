@@ -8,44 +8,6 @@ const formInput= document.getElementById('formInput');
 const btn = document.querySelector('#readInfo');
 
 
-
-// test javascript is hooked up properly to html
-console.log("test")
-
-// event listener for click on submit button on form
-formInput.addEventListener('submit', (e) =>{
-    e.preventDefault();
-
-    addBookToLibrary();
-    resetForm();
-    refreshBooks();
-    createBook(myLibrary);
-
-})
-
-// array that book objects is pushed to
-let myLibrary = [];
- 
-// constructor for book objects 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-  
-    
-}
-
-// function that checks to see which checkbox was selected, and returns that value 
-let checkedValue = function () {
-    if (check1.checked === true) {
-        return check1.value;
-    }
-    else {
-        return check2.value
-    }
-}
-
 // adds book to array 
 function addBookToLibrary() {
   let newBook = new Book(title1.value, author1.value, pages1.value, checkedValue());
@@ -56,10 +18,6 @@ function addBookToLibrary() {
 
   
 } 
-
-// set protoype 
-addBookToLibrary.prototype = Object.create(Book.prototype);
-
 
 // creates the book on page and routes info to proper elements 
 function createBook(array) {
@@ -106,6 +64,45 @@ function createBook(array) {
     }
     
 }
+
+// event listener for click on submit button on form
+formInput.addEventListener('submit', (e) =>{
+    e.preventDefault();
+
+    addBookToLibrary();
+    resetForm();
+    refreshBooks();
+    createBook(myLibrary);
+
+})
+
+// array that book objects is pushed to
+let myLibrary = [];
+ 
+// constructor for book objects 
+function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  
+    
+}
+
+// function that checks to see which checkbox was selected, and returns that value 
+let checkedValue = function () {
+    if (check1.checked === true) {
+        return check1.value;
+    }
+    else {
+        return check2.value
+    }
+}
+
+
+
+// set protoype 
+addBookToLibrary.prototype = Object.create(Book.prototype);
 
 
 
@@ -209,7 +206,7 @@ if (storageAvailable('localStorage')) {
 
 // checks to see on page load, if local storage exists from prior session, if it does, loads user data
 function onStartUp(){
-    if ((localStorage === null) || (localStorage.getItem('library') == '[]')) {
+    if ((localStorage && localStorage === 0) || (localStorage.getItem('library') == '[]')) {
         localStorage.removeItem('library');
         myLibrary = [];
         
