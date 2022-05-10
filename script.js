@@ -70,12 +70,9 @@ formInput.addEventListener('submit', (e) =>{
     e.preventDefault();
 
     addBookToLibrary();
-  debugger
     createBook(myLibrary);
     resetForm();
     refreshBooks();
-    
-
 })
 
 
@@ -205,12 +202,16 @@ function onStartUp(){
     if ((localStorage && localStorage.length === 0) || (localStorage.getItem('library') == '[]')) {
         localStorage.removeItem('library');
         myLibrary = [];
+      console.log(myLibrary)
         
     }
     else {
         myLibrary = JSON.parse(localStorage.getItem('library'));
         createBook(myLibrary);
+      console.log(myLibrary)
     }
 }
 
 onStartUp();
+
+console.log(myLibrary)
