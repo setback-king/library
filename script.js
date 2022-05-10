@@ -7,7 +7,7 @@ const check2 = document.getElementById('read2');
 const formInput= document.getElementById('formInput');
 const btn = document.querySelector('#readInfo');
 
-
+console.log("git updated")
 // adds book to array 
 function addBookToLibrary() {
   let newBook = new Book(title1.value, author1.value, pages1.value, checkedValue);
