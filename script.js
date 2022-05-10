@@ -11,7 +11,6 @@ const btn = document.querySelector('#readInfo');
 // adds book to array 
 function addBookToLibrary() {
   let newBook = new Book(title1.value, author1.value, pages1.value, checkedValue);
-  let myLibrary = [];
   myLibrary.push(newBook);
 
   let storedLibrary = JSON.stringify(myLibrary);
@@ -69,9 +68,7 @@ function createBook(array) {
 // event listener for click on submit button on form
 formInput.addEventListener('submit', (e) =>{
     e.preventDefault();
-     console.log(myLibrary)
     addBookToLibrary();
-    console.log(myLibrary)
     createBook(myLibrary);
     resetForm();
     refreshBooks();
@@ -195,6 +192,7 @@ if ( window.history.replaceState ) {
 if (storageAvailable('localStorage')) {
     console.log("yes")
     console.log("git updated")
+    console.log(myLibrary)
   }
   else {
    console.log('no')
@@ -205,13 +203,13 @@ function onStartUp(){
     if ((localStorage && localStorage.length === 0) || (localStorage.getItem('library') == '[]')) {
         localStorage.removeItem('library');
         myLibrary = [];
-      console.log(myLibrary)
+  
         
     }
     else {
         myLibrary = JSON.parse(localStorage.getItem('library'));
         createBook(myLibrary);
-      console.log(myLibrary)
+      
     }
 }
 
