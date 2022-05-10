@@ -11,6 +11,7 @@ const btn = document.querySelector('#readInfo');
 // adds book to array 
 function addBookToLibrary() {
   let newBook = new Book(title1.value, author1.value, pages1.value, checkedValue);
+  let myLibrary = [];
   myLibrary.push(newBook);
 
   let storedLibrary = JSON.stringify(myLibrary);
