@@ -11,6 +11,7 @@ const btn = document.querySelector("#readInfo");
 // array that book objects is pushed to
 let myLibrary = [];
 
+console.log(myLibrary)
 
 // event listener for click on submit button on form
 formInput.addEventListener("submit", (e) => {
