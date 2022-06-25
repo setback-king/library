@@ -9,7 +9,7 @@ const formInput = document.getElementById("formInput");
 const btn = document.querySelector("#readInfo");
 
 // array that book objects is pushed to
-
+let myLibrary = []
 
 
 
