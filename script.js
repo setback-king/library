@@ -9,7 +9,7 @@ const formInput = document.getElementById("formInput");
 const btn = document.querySelector("#readInfo");
 
 // array that book objects is pushed to
-let myLibrary = ["ji"];
+
 
 console.log(myLibrary)
 
@@ -194,7 +194,7 @@ if (storageAvailable("localStorage")) {
 function onStartUp() {
   if (localStorage.length === null || localStorage.getItem("library") == "[]") {
     localStorage.removeItem("library");
-    myLibrary = [];
+    let myLibrary = [];
   } else {
     myLibrary = JSON.parse(localStorage.getItem("library"));
     createBook(myLibrary);
