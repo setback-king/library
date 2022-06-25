@@ -59,7 +59,7 @@ function addBookToLibrary() {
     pages1.value,
     checkedValue()
   );
-  myLibrary.push(newBook);
+  myLibrary?.push(newBook);
   libraryStorage();
 }
 
@@ -68,7 +68,7 @@ addBookToLibrary.prototype = Object.create(Book.prototype);
 
 // creates the book on page and routes info to proper elements
 function createBook(array) {
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < array?.length; i++) {
     let createBook = document.createElement("div");
     createBook.classList.add("newBook");
     books.appendChild(createBook);
