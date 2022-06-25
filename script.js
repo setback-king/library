@@ -8,10 +8,6 @@ const check2 = document.getElementById("read2");
 const formInput = document.getElementById("formInput");
 const btn = document.querySelector("#readInfo");
 
-// array that book objects is pushed to
-let myLibrary = []
-
-
 
 // event listener for click on submit button on form
 formInput.addEventListener("submit", (e) => {
