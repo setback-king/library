@@ -64,6 +64,7 @@ addBookToLibrary.prototype = Object.create(Book.prototype);
 
 // creates the book on page and routes info to proper elements
 function createBook(array) {
+  if(array) {
   for (let i = 0; i < array.length; i++) {
     let createBook = document.createElement("div");
     createBook.classList.add("newBook");
@@ -101,6 +102,7 @@ function createBook(array) {
     createButton.innerText = "Remove";
     createButton.setAttribute("dataindex", i);
     createBook.appendChild(createButton);
+  }
   }
 }
 
