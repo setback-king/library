@@ -9,7 +9,6 @@ const formInput = document.getElementById("formInput");
 const btn = document.querySelector("#readInfo");
 
 // test javascript is hooked up properly to html
-console.log("test");
 
 // event listener for click on submit button on form
 formInput.addEventListener("submit", (e) => {
@@ -59,7 +58,7 @@ function addBookToLibrary() {
     pages1.value,
     checkedValue()
   );
-  myLibrary?.push(newBook);
+  myLibrary.push(newBook);
   libraryStorage();
 }
 
@@ -68,7 +67,7 @@ addBookToLibrary.prototype = Object.create(Book.prototype);
 
 // creates the book on page and routes info to proper elements
 function createBook(array) {
-  for (let i = 0; i < array?.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     let createBook = document.createElement("div");
     createBook.classList.add("newBook");
     books.appendChild(createBook);
@@ -133,15 +132,13 @@ books.addEventListener("click", (e) => {
     createBook(myLibrary);
     libraryStorage();
 
-    console.log(myLibrary);
-    console.log(e.target);
+
   } else if (e.target.classList.contains("greenButton")) {
     e.target.textContent = "Read: No";
     e.target.className = "redButton";
     myLibrary[e.target.getAttribute("datatext")].read = "No";
     libraryStorage();
 
-    console.log(e.target);
   } else if (e.target.classList.contains("redButton")) {
     e.target.textContent = "Read: Yes";
     e.target.className = "greenButton";
@@ -149,7 +146,6 @@ books.addEventListener("click", (e) => {
     let storedLibrary = JSON.stringify(myLibrary);
     localStorage.setItem("library", storedLibrary);
 
-    console.log(e.target);
   } else console.log(e.target);
 });
 
@@ -195,7 +191,7 @@ if (storageAvailable("localStorage")) {
 
 // checks to see on page load, if local storage exists from prior session, if it does, loads user data
 function onStartUp() {
-  if (localStorage.length === 0 || localStorage.getItem("library") == "[]") {
+  if (localStorage.length === null || localStorage.getItem("library") == "[]") {
     localStorage.removeItem("library");
     myLibrary = [];
   } else {
@@ -209,12 +205,6 @@ function libraryStorage() {
   localStorage.setItem("library", storedLibrary);
 }
 
-title1.addEventListener("input", () => {
-  if (title1.validity.tooShort) {
-    title1.setCustomValidity("I am expecting a longer title");
-  } else {
-    title1.setCustomValidity("");
-  }
-});
+
 
 onStartUp();
