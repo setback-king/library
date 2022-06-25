@@ -8,7 +8,9 @@ const check2 = document.getElementById("read2");
 const formInput = document.getElementById("formInput");
 const btn = document.querySelector("#readInfo");
 
-// test javascript is hooked up properly to html
+// array that book objects is pushed to
+let myLibrary = [];
+
 
 // event listener for click on submit button on form
 formInput.addEventListener("submit", (e) => {
@@ -20,8 +22,6 @@ formInput.addEventListener("submit", (e) => {
   createBook(myLibrary);
 });
 
-// array that book objects is pushed to
-let myLibrary = [];
 
 // constructor for book objects
 /*function Book(title, author, pages, read) {
