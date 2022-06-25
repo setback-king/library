@@ -193,7 +193,7 @@ if (storageAvailable("localStorage")) {
 // checks to see on page load, if local storage exists from prior session, if it does, loads user data
 let myLibrary = []
 function onStartUp() {
-  let myLibrary = []
+
 
   if (localStorage.length === null || localStorage.getItem("library") == "[]") {
     localStorage.removeItem("library");
