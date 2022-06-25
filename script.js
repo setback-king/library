@@ -11,7 +11,7 @@ const btn = document.querySelector("#readInfo");
 // array that book objects is pushed to
 
 
-console.log(myLibrary)
+
 
 // event listener for click on submit button on form
 formInput.addEventListener("submit", (e) => {
@@ -64,7 +64,7 @@ function addBookToLibrary() {
 }
 
 // set protoype
-addBookToLibrary.prototype = Object.create(Book.prototype);
+
 
 // creates the book on page and routes info to proper elements
 function createBook(array) {
