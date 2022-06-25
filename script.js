@@ -64,7 +64,7 @@ function addBookToLibrary() {
 }
 
 // set protoype
-
+addBookToLibrary.prototype = Object.create(Book.prototype);
 
 // creates the book on page and routes info to proper elements
 function createBook(array) {
@@ -194,7 +194,6 @@ if (storageAvailable("localStorage")) {
 function onStartUp() {
   if (localStorage.length === null || localStorage.getItem("library") == "[]") {
     localStorage.removeItem("library");
-    let myLibrary = [];
   } else {
     myLibrary = JSON.parse(localStorage.getItem("library"));
     createBook(myLibrary);
